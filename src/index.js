@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Model from './car/car.js';
 import Car from './car/car.js';
-
+import './car/CarEx.js';
 const myFirstElement = <h1>Hello React</h1>
 
 
@@ -22,7 +22,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ReactDOM.render(
-  temp, document.getElementById('demo')
+  temp, document.getElementById('test')
 )
 
 // If you want your app to work offline and load faster, you can change
