@@ -66,3 +66,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## git command
+
+responstory đã tồn tại:
+```
+ git remote add origin https://github.com/pqthinh/my-react-app.git
+
+ git push -u origin master
+```
+nếu chưa có:
+```
+ git init:  tạo git commit
+ git add readme.md : tạo file 
+ git commit -m "push project"  : commit
+ git remote add origin https://github.com/pqthinh/my-react-app.git
+ git push -u origin master
+```
