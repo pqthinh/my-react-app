@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-//import './car/car.js'
 import Model from './car/car.js';
 import Car from './car/car.js';
 
@@ -15,15 +14,16 @@ const intro = <p>{myCar.show()}</p>
 
 let myCar0 = new Car("abc");
 
-
+let temp = <text>` {intro}  {myCar0.present()}  {myFirstElement}`</text>
 ReactDOM.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
-  //intro,
-  myCar0.present(),
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
+ReactDOM.render(
+  temp, document.getElementById('demo')
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
