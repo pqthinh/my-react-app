@@ -113,3 +113,14 @@ npm install -–save concurrently axios express mysql
     "dev": "concurrently \"npm run server \" \"npm run client \" "
   },
 ```
+
+
+### temp : client list customer 
+
+```
+<div>Name: {this.state.customer.name} </div>
+<div>Phone: {this.state.customer.phone} </div>
+<div>Status: {this.state.customer.status} </div>
+<div>Email: {this.state.customer.email} </div>
+<div> Address: {this.state.customer.address} </div>
+```

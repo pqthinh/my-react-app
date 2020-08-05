@@ -1,12 +1,33 @@
+// import './server/connect'
 const express = require('express')
 const app =express()
+const mysql =  require('mysql')
+const conn = mysql.createConnection({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'test'
+})
+
+conn.connect((err)=>{
+    if(err) throw err
+    console.log('Connected to database')
+})
 
 app.get('/', (req,res)=>{
     res.send("Hello world")
 })
 
-app.get("/customer", (req, res)=>{
+app.get('/test', (req, res)=>{
     res.json({ message:'Test api customer'})
+})
+
+app.get('/customer', (req, res)=>{
+    let sql =  "select * from customer"
+    conn.query(sql,(err, result)=>{
+        if (err ) throw err
+        res.json({customer: result})
+    })
 })
 
 app.listen(4000, ()=>{
