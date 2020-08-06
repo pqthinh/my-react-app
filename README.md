@@ -124,3 +124,9 @@ npm install -–save concurrently axios express mysql
 <div>Email: {this.state.customer.email} </div>
 <div> Address: {this.state.customer.address} </div>
 ```
+
+### Sử dụng phương thức post, truyền dữ lieeu qua body-request  `body-parser`
+
+```
+npm install body-parser
+```
