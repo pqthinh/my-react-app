@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios';
+import Menu from './menu'
+// import ReactDOM from 'react-dom'
 
 // function App() {
 //   return (
@@ -138,9 +140,15 @@ class App extends Component {
             }
           </div>
         </div>
+        <div><Menu/></div>
       </div>
     )
   }
 }
-
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Menu />
+//   </React.StrictMode>,
+//   document.getElementById('demo')
+// );
 export default App

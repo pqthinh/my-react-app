@@ -130,3 +130,6 @@ npm install -–save concurrently axios express mysql
 ```
 npm install body-parser
 ```
+
+### download router-react-dom for client
+`npm install --save react-router-dom`
