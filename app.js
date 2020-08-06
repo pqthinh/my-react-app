@@ -15,7 +15,7 @@ conn.connect((err)=>{
 })
 
 app.get('/', (req,res)=>{
-    res.send("Hello world")
+    res.json({send:"Hello world"})
 })
 
 app.get('/test', (req, res)=>{
