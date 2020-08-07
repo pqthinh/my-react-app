@@ -32,10 +32,10 @@ function Menu() {
         </div>
     )
 }
-ReactDOM.render(
-    <Router>
-        <Menu/>
-    </Router>,
-    document.getElementById('demo')
-)
+// ReactDOM.render(
+//     <Router>
+//         <Menu/>
+//     </Router>,
+//     document.getElementById('demo')
+// )
 export default Menu

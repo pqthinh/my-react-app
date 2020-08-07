@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 class About extends React.Component {
   render() {
@@ -7,6 +7,6 @@ class About extends React.Component {
   }
 }
 
-ReactDOM.render(<About />, document.getElementById('demo'));
+// ReactDOM.render(<About />, document.getElementById('demo'));
 
 export default About
