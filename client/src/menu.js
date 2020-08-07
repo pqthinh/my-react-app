@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route
+    Route,
+    Link, 
+    NavLink
 } from 'react-router-dom'
 import Home from './component/home'
 import Customer from './component/customer'
@@ -12,23 +12,18 @@ import About from './component/about'
 function Menu() {
     return (
         <div>
-            <Switch>
-                <Route path="/home">
-                    <Home />
-                </Route>
-
-                <Route path="/customer">
-                    <Customer />
-                </Route>
-{/* 
-                <Route path='/customer/:id'>
-                    <Customer />
-                </Route> */}
-
-                <Route path='/about'>
-                    <About/>
-                </Route>
-            </Switch>
+            <Router>
+                <div className="demo">
+                    <div>
+                        <nav><Link to="/">Home</Link></nav>
+                            <Route path="/" component={Home} />
+                        <nav><Link to="/about">About</Link></nav>
+                            <Route path="/about" component={About} />
+                        <nav><Link to="/customer">Customer</Link></nav>
+                            <Route path="/customer" component={Customer} />
+                    </div>
+                </div>
+            </Router>
         </div>
     )
 }

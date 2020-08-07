@@ -55,7 +55,7 @@ class Customer extends React.Component {
                   <div>Status: {item.status} </div>
                   <div>Email: {item.email} </div>
                   <div>Address {item.address} </div>
-                  <img src='./images/user.png' alt="avatar of user"/>
+                  <img src='../images/user.png' alt="avatar of user"/>
                 </div>
               ))
             }
