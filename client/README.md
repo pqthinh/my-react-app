@@ -76,3 +76,6 @@ npm install body-parser
 
 ### Active link in nav 
 `exact `
+
+## Sử dụng React Bootrap
+npm install react-boostrap boostrap

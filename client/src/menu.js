@@ -67,6 +67,10 @@ class Menu extends Component {
                 <ul className="nav navbar-nav">
                     {this.showMenu(menu)}
                 </ul>
+                <form className="form-inline" style={{marginTop: "5px"}}>
+                   <input className="form-control mr-sm-2" type="text" placeholder="Tìm kiếm..."/>
+                    <button className="btn btn-success" type="submit">Tìm kiếm</button>
+                </form>
             </nav>
         )
     }
