@@ -5,6 +5,8 @@ import React from 'react'
 import Home from './component/home'
 import About from './component/about'
 import Customer from './component/customer'
+import Login from './component/login'
+import Signin from './component/signin'
 const routes = [
     {
         path :'/',
@@ -20,6 +22,16 @@ const routes = [
         path:'/customer',
         exact: false,
         main: ()=> <Customer/>
+    },
+    {
+        path: '/login',
+        exact: false,
+        main: ()=> <Login/>
+    },
+    {
+        path: '/signin',
+        exact :false,
+        main: ()=> <Signin/>
     }
 ]
 export default routes

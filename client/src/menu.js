@@ -31,6 +31,11 @@ const menu = [
         name : "Đăng nhập",
         to   : '/login',
         exact: true
+    },
+    {
+        name :'Đăng ký',
+        to   :'./signin',
+        exact: true
     }
 ]
 
@@ -76,7 +81,7 @@ class Menu extends Component {
                         to = {menu.to}
                         activeOnlyWhenExact = {menu.exact}
                     />
-                    )
+                )
             })
         }
         return result

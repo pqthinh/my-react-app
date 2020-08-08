@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Menu from './menu'
 import routes from './routes'
+
 class ContentMenu extends Component {
     render() {
         return (
