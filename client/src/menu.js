@@ -1,36 +1,87 @@
-import React from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link, 
-    NavLink
-} from 'react-router-dom'
-import Home from './component/home'
-import Customer from './component/customer'
-import About from './component/about'
+import React , {Component} from 'react'
+import {Route, Link} from 'react-router-dom'
 
-function Menu() {
+const menu = [
+    {
+        name: 'Trang chủ',
+        to  : '/',
+        exact: true
+    },
+    {
+        name: 'Giới thiệu',
+        to  : 'about',
+        exact: true
+    },
+    {
+        name: 'Liên hệ',
+        to  : '/contact',
+        exact: true
+    },
+    {
+        name : 'Sản phẩm',
+        to   : '/product',
+        exact: true
+    },
+    {
+        name : 'Thành viên',
+        to   : '/customer',
+        exact: true
+    },
+    {
+        name : "Đăng nhập",
+        to   : '/login',
+        exact: true
+    }
+]
+
+const MenuLink = ({
+    label,
+    to,
+    activeOnlyWhenExact 
+}) =>{
     return (
-        <div>
-            <Router>
-                <div className="demo">
-                    <div>
-                        <nav><Link to="/">Home</Link></nav>
-                            <Route path="/" component={Home} />
-                        <nav><Link to="/about">About</Link></nav>
-                            <Route path="/about" component={About} />
-                        <nav><Link to="/customer">Customer</Link></nav>
-                            <Route path="/customer" component={Customer} />
-                    </div>
-                </div>
-            </Router>
-        </div>
+        <Route
+            path= {to}
+            exact = {activeOnlyWhenExact}
+            children = { ({match}) => {
+                var active = match ? 'active' :''
+                return (
+                    <li className= {`my-li ${active}` }>
+                        <Link to= {to} className="my-link">{label}</Link>
+                    </li>
+                )
+            }}
+        />
     )
 }
-// ReactDOM.render(
-//     <Router>
-//         <Menu/>
-//     </Router>,
-//     document.getElementById('demo')
-// )
+
+class Menu extends Component {
+    render() {
+        return (
+            <nav className="navbar navbar-default">
+                <ul className="nav navbar-nav">
+                    {this.showMenu(menu)}
+                </ul>
+            </nav>
+        )
+    }
+    showMenu = (menus) => {
+        var result = null
+        if(menu.length > 0) {
+            result = menus.map((menu, index)=> {
+                return (
+                    <MenuLink
+                        key={index}
+                        label= {menu.name}
+                        to = {menu.to}
+                        activeOnlyWhenExact = {menu.exact}
+                    />
+                    )
+            })
+        }
+        return result
+    }
+}
+
+
 export default Menu
