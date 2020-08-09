@@ -77,5 +77,14 @@ npm install body-parser
 ### Active link in nav 
 `exact `
 
-## Sử dụng React Bootrap
+### Sử dụng React Bootrap
 npm install react-boostrap boostrap
+
+### Sua loi mysql shutdown unexpected
+
+--Sua cong mac dinh 3306 thanh 3307 
+--Thay cong chinh thanh 3307
+-- Restart mysql
+-- Xoa toan bo file tao ra khi bat mysql o phien truoc
+-- Bat mysql
+< Chu y : Loi tren la do tat Xampp khong dung cach>
