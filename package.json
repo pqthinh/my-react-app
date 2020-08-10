@@ -17,7 +17,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "server": "node app",
+    "server": "node api/app",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server \" \"npm run client \" "
   },
