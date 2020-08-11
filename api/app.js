@@ -2,6 +2,12 @@
 const express = require('express')
 const app =express()
 const mysql =  require('mysql')
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
 const conn = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
@@ -23,9 +29,23 @@ app.get('/test', (req, res)=>{
 })
 
 app.get('/customer', (req, res)=>{
-    let sql =  "select * from customer"
+    let sql =  "select * from customer order by 1"
     conn.query(sql,(err, result)=>{
         if (err ) throw err
+        res.json({customer: result})
+    })
+})
+
+app.post('customer/add', (req, res)=>{
+    alert(req.body)
+    let name = req.body.name
+    let phone = req.body.phone
+    let email = req.body.email
+    let address = req.body.address
+    let sta = req.body.status
+    let sql =`insert into customer(name,phone, email, address, status) values ('${name}', '${phone}','${email}','${address}','${sta}')`
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
         res.json({customer: result})
     })
 })
