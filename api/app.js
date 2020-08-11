@@ -36,7 +36,7 @@ app.get('/customer', (req, res)=>{
     })
 })
 
-app.post('customer/add', (req, res)=>{
+app.post('/customer/add', (req, res)=>{
     alert(req.body)
     let name = req.body.name
     let phone = req.body.phone
