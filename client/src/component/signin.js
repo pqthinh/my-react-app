@@ -11,7 +11,7 @@ class Signin extends Component {
             address:'',
             status: 'Copper'
         }
-     }
+    }
     handleFormInputChange = (event)=>{
         const target= event.target
         const value = target.value
@@ -19,7 +19,7 @@ class Signin extends Component {
         this.setState({
             [name]: value
         })
-        //alert(this.state[name])
+        alert(this.state[name])
     }
     handleFormSubmit = (event)=>{
         event.preventDefault()
@@ -29,7 +29,7 @@ class Signin extends Component {
             phone: this.state.phone,
             email: this.state.email,
             address: this.state.address,
-            //status: this.state.status
+            status: this.state.status
         }
         // alert(cus.name)
         //event.preventDefault()
@@ -40,11 +40,16 @@ class Signin extends Component {
                 // this.setState({customer: customers})
                 this.setState(
                     {
-                        name: cus.name,
-                        phone: cus.phone,
-                        email: cus.email,
-                        address: cus.address,
-                        status: cus.status
+                        // name: cus.name,
+                        // phone: cus.phone,
+                        // email: cus.email,
+                        // address: cus.address,
+                        // status: cus.status
+                        name:"t",
+                        phone: '1',
+                        email: "a",
+                        address:"tb",
+                        //status:
                     }
                 )
                 alert(this.state.name)
