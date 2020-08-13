@@ -2,6 +2,7 @@ import React from 'react'
 //import ReactDOM from 'react-dom'
 import Axios from 'axios'
 import logo from '../logo.svg'
+import CustomerDetail from './customerDetail'
 
 class Customer extends React.Component {
   constructor(props) {
@@ -46,10 +47,10 @@ class Customer extends React.Component {
         {/* <div className='test'>REqust: {this.state.send}</div> */}
         <p>List of Customer : {this.state.customer.length}</p>
         <div>
-          <div className="customer">
+          <div className="customer" onClick={()=> alert(CustomerDetail)}>
             {
               this.state.customer.map(item=>(    
-                <div className='list'>  
+                <div className='list' style={{color:'red', cursor: "pointer"}}>  
                   <div>Name: {item.name} </div>
                   <div>Phone: {item.phone} </div>
                   <div>Status: {item.status} </div>
