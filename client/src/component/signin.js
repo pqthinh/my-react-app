@@ -19,7 +19,6 @@ class Signin extends Component {
         this.setState({
             [name]: value
         })
-        //console.log(this.state[name])
     }
     handleFormSubmit = (event)=>{
         event.preventDefault()
@@ -31,8 +30,6 @@ class Signin extends Component {
             address: this.state.address,
             status: this.state.status
         }
-        // alert(cus.name)
-        //event.preventDefault()
         Axios.post('/customer/add', cus)
             .then(res=>{
                 // let customers = this.state.customer
@@ -45,16 +42,13 @@ class Signin extends Component {
                         email: cus.email,
                         address: cus.address,
                         status: cus.status
-                        // name:"t",
-                        // phone: '1',
-                        // email: "a",
-                        // address:"tb",
-                        // status:
+                        
                     }
                 )
-                // alert(this.state.name)
             })
             .catch(err=> console.log(err))
+
+        event.target.reset();
     }
     render() {
         return (

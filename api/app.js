@@ -45,16 +45,15 @@ app.get('/customer/:id', (req,res)=>{
     })
 })
 app.post('/customer/add', (req, res)=>{
-    // window.alert(req.body)
     console.log(req.body)
     let name = req.body.name
     let phone = req.body.phone
     let email = req.body.email
     let address = req.body.address
     let sta = req.body.status
-    console.log(`${name}    +   ${phone} +    ${email}`)
+    
     let sql =`insert into customer(name,phone, email, address, status) values ('${name}', '${phone}','${email}','${address}','${sta}')`
-    console.log(sql)
+    
     conn.query(sql, (err, result)=>{
         if(err) throw err
         res.json({customer: result})
