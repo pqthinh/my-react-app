@@ -37,15 +37,17 @@ app.get('/customer', (req, res)=>{
 })
 app.get('/customer/:id', (req,res)=>{
     let id= req.params.id
-    let sql = `select * from customer where id=${id+1}`
-    console.log(sql)
-    conn.query(sql, (err, result)=>{
-        if(err) console.log(err)
-        res.json({customer: result})
-    })
+    if(typeof id == 'number') {
+        let sql = `select * from customer where id=${id+1}`
+        console.log(sql)
+        conn.query(sql, (err, result)=>{
+            if(err) console.log(err)
+            res.json({customer: result})
+        })
+    } else return;
 })
 app.post('/customer/add', (req, res)=>{
-    console.log(req.body)
+    
     let name = req.body.name
     let phone = req.body.phone
     let email = req.body.email
@@ -54,10 +56,26 @@ app.post('/customer/add', (req, res)=>{
     
     let sql =`insert into customer(name,phone, email, address, status) values ('${name}', '${phone}','${email}','${address}','${sta}')`
     
-    conn.query(sql, (err, result)=>{
+    conn.query(sql, (err)=>{
         if(err) throw err
-        res.json({customer: result})
     })
+
+    conn.query('select * from customer', (err, result)=>{
+        if(err) console.log(err)
+        let idc = result[result.length-1].id
+        console.log(result[result.length-1])
+        console.log(idc)
+        let username = req.body.username
+        let pass = req.body.pass
+        let sql2 = `insert into login(id, username, pass, timeup) values(${idc}, '${username}', '${pass}', CURRENT_TIME())`
+
+        conn.query(sql2, (err, result)=>{
+            if(err) throw err
+            res.json({message: 'Success'})
+        })
+    })
+
+    
 })
 
 app.post('/login', (req, res)=>{

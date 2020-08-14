@@ -9,7 +9,9 @@ class Signin extends Component {
             phone:'',
             email:'',
             address:'',
-            status: 'Copper'
+            status: 'Copper',
+            pass: '',
+            username: ''
         }
     }
     handleFormInputChange = (event)=>{
@@ -28,7 +30,9 @@ class Signin extends Component {
             phone: this.state.phone,
             email: this.state.email,
             address: this.state.address,
-            status: this.state.status
+            status: this.state.status,
+            pass: this.state.pass,
+            username: this.state.username
         }
         Axios.post('/customer/add', cus)
             .then(res=>{
@@ -41,8 +45,9 @@ class Signin extends Component {
                         phone: cus.phone,
                         email: cus.email,
                         address: cus.address,
-                        status: cus.status
-                        
+                        status: cus.status,
+                        pass: cus.pass,
+                        username: cus.username
                     }
                 )
             })
@@ -72,11 +77,11 @@ class Signin extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="user">User name: </label>
-                        <input type="text" className="form-control" id="user" onChange={this.handleFormInputChange}/>
+                        <input type="text" className="form-control" id="user" name="username" onChange={this.handleFormInputChange}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">Password: </label>
-                        <input type="password" className="form-control" id="pass" onChange={this.handleFormInputChange}/>
+                        <input type="password" className="form-control" id="pass" name="pass" onChange={this.handleFormInputChange}/>
                     </div>
                     <button className="btn btn-success" type="submit">Đăng ký</button>
                 </form>
