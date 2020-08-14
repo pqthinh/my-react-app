@@ -60,6 +60,18 @@ app.post('/customer/add', (req, res)=>{
     })
 })
 
+app.post('/login', (req, res)=>{
+    let username= req.body.username
+    let pass = req.body.pass
+    let sql = `select * from login where username= '${username}' and pass = '${pass}'`
+    conn.query(sql, (err, result)=>{
+        if(err) console.log(err)
+        else {
+            (result.length==1? res.json({status: "Success"}): res.json({status: "Error"}))
+        }
+    })
+})
+
 app.listen(4000, ()=>{
     console.log("App running at port 4000")
 })
