@@ -47,17 +47,10 @@ class Customer extends React.Component {
         {/* <div className='test'>REqust: {this.state.send}</div> */}
         <p>List of Customer : {this.state.customer.length}</p>
         <div>
-          <div className="customer" onClick={()=> alert(CustomerDetail)}>
+          <div className="customer" /*onClick={()=> alert(CustomerDetail)}*/>
             {
               this.state.customer.map(item=>(    
-                <div className='list' style={{color:'red', cursor: "pointer"}}>  
-                  <div>Name: {item.name} </div>
-                  <div>Phone: {item.phone} </div>
-                  <div>Status: {item.status} </div>
-                  <div>Email: {item.email} </div>
-                  <div>Address {item.address} </div>
-                  <img src='../images/user.png' alt="avatar of user"/>
-                </div>
+                <CustomerDetail customer={item}/>
               ))
             }
           </div>
