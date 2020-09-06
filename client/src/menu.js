@@ -64,13 +64,18 @@ class Menu extends Component {
     render() {
         return (
             <nav className="navbar navbar-default">
-                <ul className="nav navbar-nav">
-                    {this.showMenu(menu)}
-                </ul>
-                <form className="form-inline" style={{marginTop: "5px"}}>
-                   <input className="form-control mr-sm-2" type="text" placeholder="Tìm kiếm..."/>
-                    <button className="btn btn-success" type="submit">Tìm kiếm</button>
-                </form>
+                <div className="col-md-8 col-sm-10 col-xs-12">
+                    <ul className="nav navbar-nav">
+                        {this.showMenu(menu)}
+                    </ul>
+                </div>
+                <div className="col-md-4 col-sm-10 col-xs-12">
+                    <form className="form-inline ml-auto" method="GET" style={{margin: '9px'}}>
+                        <input className="form-control mr-sm-2" type="text" placeholder="Tìm kiếm..."/>
+                        <button className="btn btn-success" type="submit">Tìm kiếm</button>
+                    </form>
+                </div>
+                
             </nav>
         )
     }
@@ -89,6 +94,9 @@ class Menu extends Component {
             })
         }
         return result
+    }
+    search = () =>{
+
     }
 }
 

@@ -5,14 +5,14 @@ class CustomerDetail extends Component {
     constructor(props) {
         super(props)
         this.state={customer: props.customer}
-        //console.log(props.props)
-        console.log(this.state.customer)
+        // console.log(props.props)
+        // console.log(this.state.customer)
     }
     
     render () {
         var customer = this.state.customer;
         return (
-            <div className='list' style={{color:'red', cursor: "pointer"}}>  
+            <div className='list' style={{color:'#000', cursor: "pointer"}}>  
                   <div>Name: {customer.name} </div>
                   <div>Phone: {customer.phone} </div>
                   <div>Status: {customer.status} </div>

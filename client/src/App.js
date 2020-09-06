@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import ContentMenu from './contentMenu';
-//import Menu from './menu'
+// import Menu from './menu'
 // import Customer from './component/customer';
 // import Menu from './menu';
 import Dialog from './component/dialog'
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className='App'>
         <ContentMenu/>,
-        <Dialog/>
+        <Dialog title={'title'} someContents={"Customer"}/>
       </div>
     )
   }
