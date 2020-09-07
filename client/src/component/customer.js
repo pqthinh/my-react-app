@@ -1,8 +1,9 @@
 import React from 'react'
-//import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 import Axios from 'axios'
-import logo from '../logo.svg'
+// import logo from '../logo.svg'
 import CustomerDetail from './customerDetail'
+import Dialog from './dialog'
 
 class Customer extends React.Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class Customer extends React.Component {
       send: '',
       message: ''
     }
+  }
+
+  showCustomer = (item)=> {
+    ReactDOM.render(<Dialog section={'Customer '+ item.id} title={item.name} content={item.email}/>, document.getElementById('demo'));
   }
 
   componentDidMount(){
@@ -36,26 +41,16 @@ class Customer extends React.Component {
   render() {
     return (
       <div className="demo">
-        <header className="App-header">
-          <h1>{this.state.message}</h1>
-          <img src={logo} className="App-logo" alt="logo react"/>
-            <p>
-              pqthinh
-            </p>
-        </header>
-
-        {/* <div className='test'>REqust: {this.state.send}</div> */}
         <p>List of Customer : {this.state.customer.length}</p>
         <div>
-          <div className="customer" /*onClick={()=> alert(CustomerDetail)}*/>
+          <div className="customer">
             {
               this.state.customer.map(item=>(    
-                <CustomerDetail customer={item}/>
+                <div onClick={this.showCustomer(item)}><CustomerDetail customer={item}/></div>
               ))
             }
           </div>
         </div>
-        
       </div>
     )
   }

@@ -88,3 +88,14 @@ npm install react-boostrap boostrap
 -- Xoa toan bo file tao ra khi bat mysql o phien truoc
 -- Bat mysql
 < Chu y : Loi tren la do tat Xampp khong dung cach>
+
+### TEMP
+```react
+<header className="App-header">
+    <h1>{this.state.message}</h1>
+    <img src={logo} className="App-logo" alt="logo react"/>
+    <p>
+        pqthinh
+    </p>
+</header> 
+```

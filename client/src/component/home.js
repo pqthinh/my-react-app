@@ -1,9 +1,12 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+import Dialog from './dialog';
+import About from './about';
 
 class Home extends React.Component {
   render() {
-    return <h2>Hi, This is Home!</h2>;
+    return (
+    <Dialog title={'Hello World'} someContents={<About/>}/>
+    )
   }
 }
 

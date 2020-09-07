@@ -30,6 +30,8 @@ class Login extends Component{
                     username: user.username,
                     pass: user.pass
                 })
+                if(this.state.username==='admin' & this.state.pass==='admin') res.json("Success!!!")
+                else res.json('Fail!!!')
             })
             .catch(err => console.log(err))
     }
@@ -37,7 +39,7 @@ class Login extends Component{
         return (
             <div>
                 <div className="col-md col-md-4 col-md-offset-4">
-                    <form onSubmit={this.submitForm}> 
+                    <form> 
                         <div className="form-group">
                             <label for="username">User name:</label>
                             <input type="text" onChange={this.handerForm} className="form-control" id="username"/>
@@ -49,7 +51,7 @@ class Login extends Component{
                         <div className="checkbox">
                             <label><input type="checkbox"/> Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button onClick="submitForm()" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

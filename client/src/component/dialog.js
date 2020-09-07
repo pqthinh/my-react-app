@@ -22,10 +22,10 @@ export default class Dialog extends Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <section>
-                <h1>React-Modal Examples</h1>
+                <h1>{this.props.section? this.props.section: 'Dialog' }</h1>
                 <input type="button" value="Open" onClick={() => this.openModal()} />
                 <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
