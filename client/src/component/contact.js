@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import CarouselComponent from './carousel'
 
 class Contact extends Component {
     render() {
         return (
-            <div>This is a Contact</div>
-            
+            <CarouselComponent/>
         )
     }
 }
+
+export default Contact

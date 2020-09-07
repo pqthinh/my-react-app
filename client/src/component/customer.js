@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
 import Axios from 'axios'
 // import logo from '../logo.svg'
 import CustomerDetail from './customerDetail'
-import Dialog from './dialog'
+//import Dialog from './dialog'
 
 class Customer extends React.Component {
   constructor(props) {
@@ -16,7 +16,8 @@ class Customer extends React.Component {
   }
 
   showCustomer = (item)=> {
-    ReactDOM.render(<Dialog section={'Customer '+ item.id} title={item.name} content={item.email}/>, document.getElementById('demo'));
+    return
+    //ReactDOM.render(<Dialog section={'Customer '+ item.id} title={item.name} content={item.email}/>, document.getElementById('demo'));
   }
 
   componentDidMount(){
