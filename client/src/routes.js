@@ -7,6 +7,8 @@ import About from './component/about'
 import Customer from './component/customer'
 import Login from './component/login'
 import Signin from './component/signin'
+import Contact from './component/contact'
+
 const routes = [
     {
         path :'/',
@@ -17,6 +19,11 @@ const routes = [
         path:'/about',
         exact: false,
         main: ()=> <About/>
+    },
+    {
+        path: '/contact',
+        exact: false,
+        main: ()=> <Contact/>
     },
     {
         path:'/customer',
