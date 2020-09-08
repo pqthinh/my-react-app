@@ -133,3 +133,15 @@ npm install body-parser
 
 ### download router-react-dom for client
 `npm install --save react-router-dom`
+
+### build app
+in root: `npm install`
+
+in client: `cd ./client`  /  `npm install`
+
+run app: `npm run dev`
+
+### Loi client khi web-pack-dev #v 3.10.1
+`b1: Uninstall node_modules`
+`Remove package-lock`
+`b2 : npm install `
