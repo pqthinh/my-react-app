@@ -5,7 +5,7 @@ import About from './about';
 class Home extends React.Component {
   render() {
     return (
-    <Dialog title={'Hello World'} someContents={<About/>}/>
+    <Dialog section={'Home dialog'} title={'Hello World'} someContents={<About/>}/>
     )
   }
 }
