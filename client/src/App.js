@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import ContentMenu from './contentMenu';
-import DemoCarousel from './component/demoCarousel'
 
 class App extends Component {
   render() {

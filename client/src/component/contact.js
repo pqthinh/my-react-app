@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import DemoCarousel from './demoCarousel'
+import DemoCarousel from './slider/demoCarousel'
 
 class Contact extends Component {
     render() {
