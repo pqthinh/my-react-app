@@ -85,7 +85,8 @@ app.post('/login', (req, res)=>{
     conn.query(sql, (err, result)=>{
         if(err) console.log(err)
         else {
-            (result.length==1? res.json({status: "Success"}): res.json({status: "Error"}))
+            //res.json(result)
+            (result.length>0? res.json({status: "Success"}): res.json({status: "Error"}))
         }
     })
 })

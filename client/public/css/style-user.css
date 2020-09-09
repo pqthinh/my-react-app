@@ -13,4 +13,17 @@ img {
     width: auto; 
     max-width: 300px; 
     max-height: 300px;
-  }
+}
+
+.body {
+    margin-top: 40px;
+}
+
+.filter-form{
+    color: rgb(62, 13, 13);
+}
+
+.main-body-customer{
+    border-left: 1px solid rgb(33, 36, 31);
+    height: auto;
+}

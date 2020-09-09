@@ -4,7 +4,7 @@
 import React from 'react'
 import Home from './component/home'
 import About from './component/about'
-import Customer from './component/customer/customer'
+import ViewCustomer from './component/customer/viewCustomer'
 import Login from './component/login'
 import Signin from './component/signin'
 import Contact from './component/contact'
@@ -28,7 +28,7 @@ const routes = [
     {
         path:'/customer',
         exact: false,
-        main: ()=> <Customer/>
+        main: ()=> <ViewCustomer/>
     },
     {
         path: '/login',
