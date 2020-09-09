@@ -1,14 +1,46 @@
 import React from 'react'
 import Customer from './customer'
-import Filter from './formFilter'
+import FormFilter from './formFilter'
 
 class ViewCustomer extends React.Component {
+    // constructor(props){
+    //     super(props)
+    //     this.state= {
+    //         name: '',
+    //         email: '',
+    //         phone: '',
+    //         address: '',
+    //         status: 0
+    //     }
+    // }
+    // handerForm = (event) =>{
+    //     const target = event.target
+    //     const name= target.id
+    //     const value = target.value
+    //     this.setState({
+    //         [name]:value
+    //     })
+    // }
+
+    // submitForm = (event)=>{
+    //     event.preventDefault()
+    //     var user = {
+    //         name: this.state.name,
+    //         email:  this.state.email,
+    //         phone: this.state.phone,
+    //         address: this.state.address,
+    //         status: this.state.status
+            
+    //     }
+    //     alert(user)
+    //     return user
+    // }
     render() {
         return (
-            <div class="body mt-5 container">
+            <div className="body mt-5 container">
                 <div className="filter-form col-md col-md-2">
-                    <div class="border border-dark">
-                        <Filter/>
+                    <div className="border border-dark">
+                        <FormFilter/>
                     </div>
                    
                 </div>

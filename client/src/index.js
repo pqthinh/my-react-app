@@ -15,24 +15,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Menu />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// )
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Customer />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <About />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 serviceWorker.unregister();

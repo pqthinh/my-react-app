@@ -35,6 +35,20 @@ app.get('/customer', (req, res)=>{
         res.json({customer: result})
     })
 })
+
+app.post('/customer', (req, res)=>{
+    name = req.body.name
+    email = req.body.email
+    phone = req.body.phone
+    address = req.body.address
+    status = req.body.status
+    let sql = `select * from customer where name like '%${name}%' and email like %${email}% and phone like %${phone}% and address like '%${address}%' amd status = ${status}`
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
+        res.json({customer: result})
+    })
+})
+
 app.get('/customer/:id', (req,res)=>{
     let id= req.params.id
     if(typeof id == 'number') {

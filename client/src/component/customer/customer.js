@@ -21,13 +21,12 @@ class Customer extends React.Component {
   }
 
   componentDidMount(){
-    Axios.get('/')
-      .then(res=> this.setState({send: res.data.send}))
-      .catch(err=> {throw err})
-    Axios.get('/test')
-      .then(res=> this.setState({message: res.data.message}))
-      .catch(err=> {throw err})
-
+    // Axios.get('/')
+    //   .then(res=> this.setState({send: res.data.send}))
+    //   .catch(err=> {throw err})
+    // Axios.get('/test')
+    //   .then(res=> this.setState({message: res.data.message}))
+    //   .catch(err=> {throw err})
     Axios.get('/customer')
       .then(
         res=>{
@@ -39,16 +38,16 @@ class Customer extends React.Component {
       )
       .catch(err=> {console.log(err)})
 
-    Axios.post('/customer', this.props.dataFilter)
-      .then(
-        res=> {
-          const cus = res.data
-          this.setState({
-            customer: cus.customer
-          })
-        }
-      )
-      .catch(err => {console.log(err)})
+    // Axios.post('/customer', this.props.dataFilter)
+    //   .then(
+    //     res=> {
+    //       const cus = res.data
+    //       this.setState({
+    //         customer: cus.customer
+    //       })
+    //     }
+    //   )
+    //   .catch(err => {console.log(err)})
   }
 
   render() {
@@ -67,11 +66,7 @@ class Customer extends React.Component {
       </div>
     )
   }
-  // render() {
-  //   return <h2>Customer!</h2>;
-  // }
+ 
 }
-
-//ReactDOM.render(<Customer />, document.getElementById('demo'));
 
 export default Customer
