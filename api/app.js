@@ -28,13 +28,32 @@ app.get('/test', (req, res)=>{
     res.json({ message:'Test api customer'})
 })
 
+// app.get('/customer', (req, res)=>{
+//     let sql =  "select * from customer order by 1"
+//     conn.query(sql,(err, result)=>{
+//         if (err ) throw err
+//         res.json({customer: result})
+//     })
+// })
+
 app.get('/customer', (req, res)=>{
-    let sql =  "select * from customer order by 1"
-    conn.query(sql,(err, result)=>{
-        if (err ) throw err
+    var sql
+    console.log(req.query)
+    // if(req.query) {
+        name = req.query.name
+        email = req.query.email
+        phone = req.query.phone
+        address = req.query.address
+        status = req.query.status
+        if(name === "undefined") sql = `select * from customer where name like '%${name}%' and email like %${email}% and phone like %${phone}% and address like '%${address}%' amd status = ${status}`
+        else sql = "select * from customer"
+    //} 
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
         res.json({customer: result})
     })
 })
+
 
 app.post('/customer', (req, res)=>{
     name = req.body.name

@@ -6,20 +6,15 @@ class ViewCustomer extends React.Component {
     // constructor(props){
     //     super(props)
     //     this.state= {
-    //         name: '',
-    //         email: '',
-    //         phone: '',
-    //         address: '',
-    //         status: 0
+    //         user:{}
     //     }
     // }
-    // handerForm = (event) =>{
-    //     const target = event.target
-    //     const name= target.id
-    //     const value = target.value
-    //     this.setState({
-    //         [name]:value
+    // handle = (val) =>{
+    //     this.setState({ 
+    //         user: val
     //     })
+    //     console.log(this.state)
+    //     console.log(val)
     // }
 
     // submitForm = (event)=>{
