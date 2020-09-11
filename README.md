@@ -1,6 +1,17 @@
 ### About: 
 App : React js 
+      Boostrap 4
+      Nodejs 
 Lab:  Views and router server
+
+### Content
+
+# render data
+# component
+# props / state
+# post get delete update data in mysql
+# filter data using form
+
 
 ## git command
 
@@ -79,3 +90,7 @@ run app: `npm run dev`
 `b1: Uninstall node_modules`
 `Remove package-lock`
 `b2 : npm install `
+
+# `git push --force origin master`
+
+=============================== END OF PROJECT REACT JS ============================================
