@@ -70,6 +70,49 @@ app.post('/customer', (req, res)=>{
     console.log(sql)
 })
 
+app.post('/customer/add', (req, res)=>{
+    let name = req.body.name? req.body.name: ''
+    let email = req.body.email? req.body.email: ''
+    let phone = req.body.phone? req.body.phone: ''
+    let address = req.body.address? req.body.address: ''
+    let status = req.body.status? req.body.status: ''
+    let sql = `insert into customer(name, email, phone, address, status) values('${name}','${email}','${phone}','${address}','${status}')`
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
+        res.json('success insert data')
+    })
+    console.log(req.body)
+    console.log(sql)
+})
+
+app.post('/customer/edit', (req, res)=>{
+    let name = req.body.name? req.body.name: ''
+    let email = req.body.email? req.body.email: ''
+    let phone = req.body.phone? req.body.phone: ''
+    let address = req.body.address? req.body.address: ''
+    let status = req.body.status? req.body.status: ''
+    let id= req.body.id
+    let sql = `update customer set name='${name}', email='${email}',phone='${phone}',address='${address}',status='${status}' where id=${id}`
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
+        res.json('success update data')
+    })
+    console.log(req.body)
+    console.log(sql)
+})
+
+app.delete('/customer/delete', (req, res) =>{
+    console.log(req.body)
+    let id = req.body.id
+    let sql =`delete from customer where id =${id}`
+    conn.query(sql, (err, result)=>{
+        if(err) throw err
+        res.json('success delete data')
+    })
+    console.log(req.body)
+    console.log(sql)
+})
+
 app.get('/customer/:id', (req,res)=>{
     let id= req.params.id
     if(typeof id == 'number') {

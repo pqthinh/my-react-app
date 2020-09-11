@@ -3,6 +3,7 @@ import React from 'react'
 // import Axios from 'axios'
 // import logo from '../logo.svg'
 import CustomerDetail from './customerDetail'
+// import FormDataCustomer from '../form/crud-data'
 //import Dialog from './dialog'
 
 class Customer extends React.Component {
@@ -17,10 +18,10 @@ class Customer extends React.Component {
     // console.log(this.props)
   // }
   
-  showCustomer = (item)=> {
-    return
+  // showCustomer = (item)=> {
+  //   return
     //ReactDOM.render(<Dialog section={'Customer '+ item.id} title={item.name} content={item.email}/>, document.getElementById('demo'));
-  }
+  // }
 
   // componentDidMount(){
   //   // Axios.get('/')
