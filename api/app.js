@@ -28,44 +28,46 @@ app.get('/test', (req, res)=>{
     res.json({ message:'Test api customer'})
 })
 
-// app.get('/customer', (req, res)=>{
-//     let sql =  "select * from customer order by 1"
-//     conn.query(sql,(err, result)=>{
-//         if (err ) throw err
-//         res.json({customer: result})
-//     })
-// })
-
 app.get('/customer', (req, res)=>{
-    var sql
-    console.log(req.query)
-    // if(req.query) {
-        name = req.query.name
-        email = req.query.email
-        phone = req.query.phone
-        address = req.query.address
-        status = req.query.status
-        if(name === "undefined") sql = `select * from customer where name like '%${name}%' and email like %${email}% and phone like %${phone}% and address like '%${address}%' amd status = ${status}`
-        else sql = "select * from customer"
-    //} 
-    conn.query(sql, (err, result)=>{
-        if(err) throw err
+    let sql =  "select * from customer order by 1"
+    conn.query(sql,(err, result)=>{
+        if (err ) throw err
         res.json({customer: result})
     })
 })
 
+// app.get('/customer', (req, res)=>{
+//     var sql
+//     console.log(req.query)
+//     // if(req.query) {
+//         name = req.query.name
+//         email = req.query.email
+//         phone = req.query.phone
+//         address = req.query.address
+//         status = req.query.status
+//         if(name === "undefined") sql = `select * from customer where name like '%${name}%' and email like %${email}% and phone like %${phone}% and address like '%${address}%' amd status = ${status}`
+//         else sql = "select * from customer"
+//     //} 
+//     conn.query(sql, (err, result)=>{
+//         if(err) throw err
+//         res.json({customer: result})
+//     })
+// })
+
 
 app.post('/customer', (req, res)=>{
-    name = req.body.name
-    email = req.body.email
-    phone = req.body.phone
-    address = req.body.address
-    status = req.body.status
-    let sql = `select * from customer where name like '%${name}%' and email like %${email}% and phone like %${phone}% and address like '%${address}%' amd status = ${status}`
+    let name = req.body.name? req.body.name: ''
+    let email = req.body.email? req.body.email: ''
+    let phone = req.body.phone? req.body.phone: ''
+    let address = req.body.address? req.body.address: ''
+    let status = req.body.status? req.body.status: ''
+    let sql = `select * from customer where name like '%${name}%' and email like '%${email}%' and phone like '%${phone}%' and address like '%${address}%' and status = '${status}'`
     conn.query(sql, (err, result)=>{
         if(err) throw err
         res.json({customer: result})
     })
+    console.log(req.body)
+    console.log(sql)
 })
 
 app.get('/customer/:id', (req,res)=>{
