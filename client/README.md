@@ -99,3 +99,13 @@ npm install react-boostrap boostrap
     </p>
 </header> 
 ```
+
+
+## firebase
+npm install -g firebase-tools
+
+firebase login
+
+firebase init
+
+firebase deploy

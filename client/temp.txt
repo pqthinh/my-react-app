@@ -108,3 +108,5 @@
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
+
+== firebase nhung vao html page ==
