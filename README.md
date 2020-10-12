@@ -1,3 +1,13 @@
+### Deploy
+Run: 
+ server:    `npm install`   
+ client: 
+ 
+ `cd ./client`  
+ `npm install`  
+ `cd ..`
+
+
 ### About: 
 
 App : 
